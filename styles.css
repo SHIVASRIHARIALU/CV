@@ -8,13 +8,10 @@
 }
 
 body, html {
-    width: 100%;
-    height: 100%;
-    font-family: 'Roboto', sans-serif; /* Updated typography */
-    font-size: 16px; /* Base font size */
-    color: #333; /* Text color */
+    font-family: 'Roboto', sans-serif;
+    color: #333;
     line-height: 1.6;
-    background-color: #F0F4F8; /* Soft pastel blue background */
+    background-color: #E0E6ED; /* Soft pastel grey background */
     overflow-x: hidden;
 }
 
@@ -28,27 +25,33 @@ html {
     max-width: 960px;
     margin: 20px auto;
     padding: 40px;
-    background-color: #fff; /* White background for content */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    border-radius: 10px; /* Rounded corners */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 /* Header */
 header {
-    background: #B8D8D8; /* Pastel blue */
-    color: #333;
-    text-align: center; /* Center aligning content */
+    background: #5A7D7C; /* Pastel navy blue */
+    color: #fff;
+    text-align: center;
     padding: 40px 20px;
-    border-bottom: 5px solid #97C0C0; /* Border for visual separation */
+    border-bottom: 5px solid #486D6C; /* A darker shade for depth */
 }
 
 .profile-pic {
-    margin: 0 auto; /* Centering the profile picture */
+    margin: 0 auto;
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Circular image */
+    border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #E0E0E0; /* Light grey border for the profile picture */
+    border: 5px solid #D1DDE3; /* Light grey border */
+    transition: transform 0.3s ease;
+    perspective: 1000px;
+}
+
+.profile-pic:hover {
+    transform: rotateY(10deg) rotateX(10deg);
 }
 
 .profile-pic img {
@@ -68,15 +71,18 @@ nav {
 nav a {
     text-decoration: none;
     color: #fff;
-    background: #A4BEBE; /* Complementary pastel blue */
+    background: #709FB0; /* Complementary pastel navy blue */
     padding: 10px 20px;
     border-radius: 5px;
     margin: 0 5px;
-    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateZ(0);
+    box-shadow: 0 6px 6px rgba(0,0,0,0.2);
 }
 
 nav a:hover {
-    background: #92AFAF; /* Slightly darker on hover for feedback */
+    transform: scale(1.1) translateZ(50px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
 /* Sections */
@@ -91,16 +97,18 @@ section {
 
 .skill, .project {
     display: inline-block;
-    background: #ECECEC; /* Light grey for skills/projects */
+    background: #ECECEC;
     padding: 10px 20px;
     margin: 10px;
     border-radius: 5px;
-    transition: transform 0.3s ease, background-color 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateZ(0);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
 }
 
 .skill:hover, .project:hover {
-    transform: translateY(-5px); /* Slight raise effect on hover */
-    background: #D6D6D6; /* Darker grey on hover */
+    transform: scale(1.05) translateZ(30px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.3);
 }
 
 /* Contact Form */
@@ -116,29 +124,29 @@ section {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border: 1px solid #CCC; /* Light grey border for form elements */
-    border-radius: 5px; /* Rounded corners for form fields */
+    border: 1px solid #CCC;
+    border-radius: 5px;
 }
 
 .contact button {
     display: block;
     width: 100%;
     padding: 12px;
-    background-color: #B8D8D8; /* Matching the header background */
-    color: #333; /* Text color for contrast */
+    background-color: #5A7D7C; /* Pastel navy blue */
+    color: #fff;
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .contact button:hover {
-    background-color: #97C0C0; /* Darker shade on hover */
+    background-color: #486D6C;
 }
 
 /* Footer */
 footer {
     background: #333;
-    color: #fff; /* Ensuring text is visible against the dark background */
+    color: #fff;
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
@@ -154,13 +162,13 @@ footer {
         flex-direction: column;
     }
 
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
     header, .contact form {
         padding-top: 20px;
         padding-bottom: 20px;
-    }
-
-    nav a {
-        display: block; /* Stack nav items vertically on smaller screens */
-        margin: 10px 0; /* Add some spacing */
     }
 }
