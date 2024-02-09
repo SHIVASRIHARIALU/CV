@@ -11,7 +11,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
     color: #333;
     line-height: 1.6;
-    background-color: #E0E6ED; /* Soft pastel grey background */
+    background-color: #dee2e5; /* Light grey background */
     overflow-x: hidden;
 }
 
@@ -25,7 +25,7 @@ html {
     max-width: 960px;
     margin: 20px auto;
     padding: 40px;
-    background-color: #fff;
+    background-color: #fff; /* White background for content areas */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
@@ -36,7 +36,6 @@ header {
     color: #fff;
     text-align: center;
     padding: 40px 20px;
-    border-bottom: 5px solid #486D6C; /* A darker shade for depth */
 }
 
 .profile-pic {
@@ -45,24 +44,18 @@ header {
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    border: 5px solid #D1DDE3; /* Light grey border */
-    transition: transform 0.3s ease;
-    perspective: 1000px;
-}
-
-@keyframes rotate3D {
-    0% { transform: rotateY(0) rotateX(0); }
-    50% { transform: rotateY(180deg) rotateX(10deg); }
-    100% { transform: rotateY(360deg) rotateX(0); }
+    transition: transform 0.5s ease-in-out;
+    display: inline-block;
 }
 
 .profile-pic:hover {
-    animation: rotate3D 2s infinite linear;
+    transform: rotateY(180deg);
 }
 
 .profile-pic img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
 /* Navigation */
@@ -82,13 +75,11 @@ nav a {
     border-radius: 5px;
     margin: 0 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform: perspective(800px) translateZ(0);
-    box-shadow: 0 6px 6px rgba(0,0,0,0.2);
 }
 
-nav a:active {
-    transform: perspective(800px) translateZ(-30px);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+nav a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 /* Sections */
@@ -101,26 +92,18 @@ section {
     text-align: center;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
 .skill, .project {
     display: inline-block;
-    background: #ECECEC;
+    background: #ECECEC; /* A light grey for skill/project cards */
     padding: 10px 20px;
     margin: 10px;
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: float 3s ease-in-out infinite;
-    transform: translateZ(0);
-    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
 }
 
 .skill:hover, .project:hover {
-    transform: scale(1.05) translateZ(30px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
 }
 
 /* Contact Form */
@@ -144,15 +127,16 @@ section {
     display: block;
     width: 100%;
     padding: 12px;
-    background-color: #5A7D7C; /* Matching the header */
+    background-color: #5A7D7C; /* Pastel navy blue */
     color: #fff;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s ease;
 }
 
-.contact button:active {
-    transform: perspective(800px) translateZ(-30px);
+.contact button:hover {
+    background-color: #486D6C; /* A darker shade for hover */
+    transform: translateY(-5px);
 }
 
 /* Footer */
