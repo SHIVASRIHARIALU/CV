@@ -1,115 +1,174 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts.js"></script>
-</head>
-<body>
-    <header>
-    <div class="container header-container">
-        <div class="profile-pic">
-            <img src="profile.jpg" alt="Shiva Sri Hari Alagu Uthaya Kumar">
-        </div>
-        <center><h1>Shiva Sri Hari Alagu Uthaya Kumar</h1></center>
-        <p>Electronics and Communication Engineering Student</p>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-            <a href="https://drive.google.com/file/d/1ustQBBMW0JABItDLb1cJFvtmUAJRcR_B/view?usp=sharin.g">Download CV</a>
-        </nav>
-    </div>
-</header>
-    
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>I am a final-year undergraduate student pursuing Electronics and Communication. I have a strong passion for Electronics and Electronic System Design. My goal is to create a meaningful impact in the field by innovating in electronic and embedded engineering. I am committed to continuous learning and skill refinement, and I am driven by this hunger for knowledge.</p>
-    </section>
-    
-    <section id="skills" class="container skills">
-        <h2>Skills</h2>
-        <div class="skills-list">
-            <!-- Skills list goes here -->
-            <!-- Example: -->
-            <span class="skill">Python</span>
-            <span class="skill">Embedded C</span>
-            <span class="skill">Microcontrollers</span>
-            <span class="skill">Python</span>
-            <span class="skill">MATLAB</span>
-            <span class="skill">micropython</span>
-            <span class="skill">Image Processing</span>
-            <span class="skill">C++</span>
-            <span class="skill">Raspberry PI</span>
-            <span class="skill">STM 32</span>
-          <span class="skill">EEG</span>
-          <span class="skill">Verilog HDL</span>
-          <span class="skill">GUI Decelopment</span>
-          <span class="skill">OpenBCI</span>
-          <span class="skill">Brainstrom Matlab</span>
-        </div>
-    </section>
-    
-    <section id="projects" class="container projects">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            <!-- Projects list goes here -->
-            <!-- Example: -->
-            <div class="project">
-                <h3>FLEXEEG</h3>
-              
-            </div>
-          <div class="project">
-              <h3>Contemplative Neuroscience Experiment </h3>
-            </div>
-          <div class="project">
-              <h3>Depth Analysis</h3>
-              </div>
-            <div class="project">
-              <h3>Augmented Reality Home Automation System </h3>
-            </div>
-          <div class="project">
-              <h3>Swarm Formation Robots </h3>
-            </div>
-          <div class="project">
-              <h3>Augmented Reality Smart Surveillance System </h3>
-            </div>
-          <div class="project">
-              <h3>Speech Command Recognition and Grammar Error Detection </h3>
-            </div>
-          <div class="project">
-              <h3>RFID door lock system</h3>
-            </div>
-          <div class="project">
-              <h3>Study on CNT MOSFET</h3> 
-            </div>
-          <div class="project">
-              <h3>Universal IR remote</h3>  
-            </div>
-          
-        </div>
-    </section>
-    
-    <section id="contact" class="container contact">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-    
-    <footer>
-        <div class="container footer-container">
-            <p>&copy; 2024 Shiva Sri Hari Alagu Uthaya Kumar. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
-</html>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body, html {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #E0E6ED; /* Soft pastel grey background */
+    overflow-x: hidden;
+}
 
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container */
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Header */
+header {
+    background: #5A7D7C; /* Pastel navy blue */
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 5px solid #486D6C; /* A darker shade for depth */
+}
+
+.profile-pic {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #D1DDE3; /* Light grey border */
+    transition: transform 0.3s ease;
+    perspective: 1000px;
+}
+
+.profile-pic:hover {
+    transform: rotateY(10deg) rotateX(10deg);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    background: #709FB0; /* Complementary pastel navy blue */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateZ(0);
+    box-shadow: 0 6px 6px rgba(0,0,0,0.2);
+}
+
+nav a:hover {
+    transform: scale(1.1) translateZ(50px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Sections */
+section {
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.skills, .projects {
+    text-align: center;
+}
+
+.skill, .project {
+    display: inline-block;
+    background: #ECECEC;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateZ(0);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+}
+
+.skill:hover, .project:hover {
+    transform: scale(1.05) translateZ(30px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.3);
+}
+
+/* Contact Form */
+.contact form {
+    max-width: 500px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+}
+
+.contact button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #5A7D7C; /* Pastel navy blue */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #486D6C;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .container, .contact form {
+        padding: 20px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    header, .contact form {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
