@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 /* Base Reset */
 * {
     margin: 0;
@@ -6,10 +8,13 @@
 }
 
 body, html {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif; /* Updated typography */
+    font-size: 16px; /* Base font size */
+    color: #333; /* Text color */
     line-height: 1.6;
-    background-color: #F0F4F8; /* Light pastel blue background */
+    background-color: #F0F4F8; /* Soft pastel blue background */
     overflow-x: hidden;
 }
 
@@ -23,27 +28,27 @@ html {
     max-width: 960px;
     margin: 20px auto;
     padding: 40px;
-    background-color: #fff; /* White for content areas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    background-color: #fff; /* White background for content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners */
 }
 
 /* Header */
 header {
-    background: #B8D8D8; /* Pastel blue for the header */
-    color: #333; /* For contrast */
-    padding-top: 40px;
-    padding-bottom: 20px;
-    border-bottom: 5px solid #97C0C0; /* A shade darker for depth */
+    background: #B8D8D8; /* Pastel blue */
+    color: #333;
+    text-align: center; /* Center aligning content */
+    padding: 40px 20px;
+    border-bottom: 5px solid #97C0C0; /* Border for visual separation */
 }
 
 .profile-pic {
+    margin: 0 auto; /* Centering the profile picture */
     width: 150px;
     height: 150px;
+    border-radius: 50%; /* Circular image */
     overflow: hidden;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    border: 5px solid #E0E0E0; /* Light grey for border */
+    border: 5px solid #E0E0E0; /* Light grey border for the profile picture */
 }
 
 .profile-pic img {
@@ -61,31 +66,32 @@ nav {
 }
 
 nav a {
-    color: #fff;
     text-decoration: none;
+    color: #fff;
+    background: #A4BEBE; /* Complementary pastel blue */
     padding: 10px 20px;
-    background: #A4BEBE; /* Complementary pastel for buttons */
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    margin: 0 5px;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
 
 nav a:hover {
-    background: #92AFAF; /* Darker for hover */
+    background: #92AFAF; /* Slightly darker on hover for feedback */
 }
 
 /* Sections */
 section {
     margin: 20px 0;
+    padding: 20px;
 }
 
 .skills, .projects {
     text-align: center;
-    padding: 20px 0;
 }
 
 .skill, .project {
     display: inline-block;
-    background: #ECECEC; /* Light grey for skills/projects background */
+    background: #ECECEC; /* Light grey for skills/projects */
     padding: 10px 20px;
     margin: 10px;
     border-radius: 5px;
@@ -93,8 +99,8 @@ section {
 }
 
 .skill:hover, .project:hover {
-    transform: translateY(-5px);
-    background: #D6D6D6; /* Slightly darker on hover */
+    transform: translateY(-5px); /* Slight raise effect on hover */
+    background: #D6D6D6; /* Darker grey on hover */
 }
 
 /* Contact Form */
@@ -110,29 +116,29 @@ section {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
-    border: 1px solid #CCC; /* Consistent with light grey theme */
-    border-radius: 5px;
+    border: 1px solid #CCC; /* Light grey border for form elements */
+    border-radius: 5px; /* Rounded corners for form fields */
 }
 
 .contact button {
     display: block;
     width: 100%;
     padding: 12px;
-    background-color: #B8D8D8; /* Matching the header */
-    color: #333;
+    background-color: #B8D8D8; /* Matching the header background */
+    color: #333; /* Text color for contrast */
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 .contact button:hover {
-    background-color: #97C0C0;
+    background-color: #97C0C0; /* Darker shade on hover */
 }
 
 /* Footer */
 footer {
     background: #333;
-    color: #fff;
+    color: #fff; /* Ensuring text is visible against the dark background */
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
@@ -148,7 +154,13 @@ footer {
         flex-direction: column;
     }
 
-    header {
+    header, .contact form {
         padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    nav a {
+        display: block; /* Stack nav items vertically on smaller screens */
+        margin: 10px 0; /* Add some spacing */
     }
 }
