@@ -9,9 +9,9 @@
 
 body, html {
     font-family: 'Roboto', sans-serif;
-    color: #333;
+    color: #000; /* Text color set to black */
     line-height: 1.6;
-    background-color: #dee2e5; /* Light grey background */
+    background-color: #dee2e5; /* Light grey background from the image */
     overflow-x: hidden;
 }
 
@@ -25,17 +25,18 @@ html {
     max-width: 960px;
     margin: 20px auto;
     padding: 40px;
-    background-color: #fff; /* White background for content areas */
+    background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
 /* Header */
 header {
-    background: #5A7D7C; /* Pastel navy blue */
+    background: #5A7D7C; /* A color picked from the image */
     color: #fff;
     text-align: center;
     padding: 40px 20px;
+    border-bottom: 5px solid #486D6C;
 }
 
 .profile-pic {
@@ -44,18 +45,18 @@ header {
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    transition: transform 0.5s ease-in-out;
-    display: inline-block;
+    border: 5px solid #D1DDE3;
+    transition: transform 0.3s ease;
+    perspective: 1000px;
 }
 
 .profile-pic:hover {
-    transform: rotateY(180deg);
+    transform: rotateY(10deg) rotateX(10deg);
 }
 
 .profile-pic img {
     width: 100%;
     height: auto;
-    display: block;
 }
 
 /* Navigation */
@@ -70,16 +71,16 @@ nav {
 nav a {
     text-decoration: none;
     color: #fff;
-    background: #709FB0; /* Complementary pastel navy blue */
+    background: #709FB0; /* A color picked from the image */
     padding: 10px 20px;
     border-radius: 5px;
     margin: 0 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 6px rgba(0,0,0,0.2);
 }
 
 nav a:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: scale(1.1) translateZ(10px);
 }
 
 /* Sections */
@@ -94,16 +95,16 @@ section {
 
 .skill, .project {
     display: inline-block;
-    background: #ECECEC; /* A light grey for skill/project cards */
+    background: #ECECEC;
     padding: 10px 20px;
     margin: 10px;
     border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .skill:hover, .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
 }
 
 /* Contact Form */
@@ -127,16 +128,16 @@ section {
     display: block;
     width: 100%;
     padding: 12px;
-    background-color: #5A7D7C; /* Pastel navy blue */
+    background-color: #5A7D7C; /* A color picked from the image */
     color: #fff;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .contact button:hover {
-    background-color: #486D6C; /* A darker shade for hover */
     transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
 }
 
 /* Footer */
@@ -164,7 +165,7 @@ footer {
     }
 
     header, .contact form {
-        padding-top: 20px;
+        padding: 20px;
         padding-bottom: 20px;
     }
 }
